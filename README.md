@@ -1,2 +1,4 @@
+ไนท์ : สิ่งที่ทำเเล้ว
 
-![CM01](https://github.com/user-attachments/assets/e92909a4-9626-46fa-94a9-83c6c9f612a5)
+<img width="1158" height="722" alt="Screenshot 2025-10-01 163958" src="https://github.com/user-attachments/assets/6da237c6-7e85-4204-84d2-bd32418d11ca" />
+<img width="1157" height="725" alt="Screenshot 2025-10-01 164114" src="https://github.com/user-attachments/assets/b14858d8-b122-4921-946b-6ca7ff033528" />
