@@ -1,0 +1,55 @@
+[gd_scene load_steps=6 format=3 uid="uid://bke2p3fmhmhb7"]
+
+[ext_resource type="Script" uid="uid://d2d5b8i4l3f5l" path="res://Scripts/main_menu.gd" id="1_28flt"]
+[ext_resource type="Texture2D" uid="uid://dga8xmjtpk430" path="res://Assets/CM01.jpg" id="2_48xlc"]
+
+[sub_resource type="FontVariation" id="FontVariation_48xlc"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_1ehe0"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_ce3w2"]
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -1.0
+offset_bottom = -1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_28flt")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1600.0
+offset_bottom = 896.0
+scale = Vector2(0.720337, 0.72408)
+texture = ExtResource("2_48xlc")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 0
+offset_left = 660.0
+offset_top = 352.0
+offset_right = 940.0
+offset_bottom = 526.0
+theme_override_constants/separation = 20
+
+[node name="StartButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0.811765, 1)
+theme_override_colors/font_color = Color(0.572808, 0.742451, 0.97169, 1)
+theme_override_constants/outline_size = 10
+theme_override_fonts/font = SubResource("FontVariation_48xlc")
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxTexture_1ehe0")
+text = "Start Game"
+
+[node name="QuitButton" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_outline_color = Color(0, 0, 0.811765, 1)
+theme_override_colors/font_color = Color(0.572549, 0.741176, 0.972549, 1)
+theme_override_constants/outline_size = 10
+theme_override_font_sizes/font_size = 50
+theme_override_styles/normal = SubResource("StyleBoxTexture_ce3w2")
+text = "Quit Game"
