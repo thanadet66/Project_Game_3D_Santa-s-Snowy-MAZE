@@ -1,14 +1,16 @@
-[gd_scene load_steps=17 format=3 uid="uid://po63m4srixl4"]
+[gd_scene load_steps=18 format=3 uid="uid://po63m4srixl4"]
 
 [ext_resource type="PackedScene" uid="uid://0t0qb3qjq6my" path="res://Scenes/PlatformRed.tscn" id="2_4lh3q"]
 [ext_resource type="PackedScene" uid="uid://cf0w0skqs3k64" path="res://Scenes/player.tscn" id="2_21dfl"]
-[ext_resource type="PackedScene" uid="uid://dfc0ecsjufu7v" path="res://Scenes/PlatformBlue.tscn" id="3_mj5wy"]
-[ext_resource type="Script" path="res://Scripts/DeadZone.gd" id="4_8ry15"]
+[ext_resource type="PackedScene" uid="uid://bb5jia8pmkhwo" path="res://Map/Floor/snowfloor.tscn" id="2_ad2i4"]
+[ext_resource type="PackedScene" uid="uid://diif2bbolt7pl" path="res://Map/Gate/Gate.tscn" id="2_okl2h"]
+[ext_resource type="Script" uid="uid://bh4gdt0ruruie" path="res://Scripts/DeadZone.gd" id="4_8ry15"]
 [ext_resource type="PackedScene" uid="uid://bk5n0tn4k1l0c" path="res://Scenes/Coin.tscn" id="5_4fiv6"]
-[ext_resource type="Script" path="res://Scripts/GameManager.gd" id="6_8fvkd"]
+[ext_resource type="Script" uid="uid://dro8tkrros552" path="res://Scripts/GameManager.gd" id="6_8fvkd"]
 [ext_resource type="Texture2D" uid="uid://cnbbny7qjh2xn" path="res://Assets/Textures/coin.png" id="7_ow7xm"]
-[ext_resource type="Script" path="res://Scripts/GameUI.gd" id="7_x8whp"]
-[ext_resource type="Texture2D" uid="uid://hk3gj75327hy" path="res://Assets/Textures/Logo.png" id="9_46gx6"]
+[ext_resource type="Script" uid="uid://nv1swja1r8wj" path="res://Scripts/GameUI.gd" id="7_x8whp"]
+[ext_resource type="PackedScene" uid="uid://baebhvrwy0i" path="res://Map/BushSnow/bush_snow.tscn" id="11_3tqca"]
+[ext_resource type="PackedScene" uid="uid://qf6urpeonmm" path="res://Map/Gate/Fence.tscn" id="11_ad2i4"]
 
 [sub_resource type="Environment" id="Environment_g4ka7"]
 background_mode = 1
@@ -33,9 +35,6 @@ adjustment_enabled = true
 adjustment_brightness = 1.06
 adjustment_contrast = 0.95
 adjustment_saturation = 1.09
-
-[sub_resource type="SystemFont" id="SystemFont_om7om"]
-font_names = PackedStringArray("Star Choco")
 
 [sub_resource type="SystemFont" id="SystemFont_ub50t"]
 font_names = PackedStringArray("Star Choco")
@@ -62,26 +61,17 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
 
 [node name="Platforms" type="Node3D" parent="."]
 
+[node name="snowfloor2" parent="Platforms" instance=ExtResource("2_ad2i4")]
+transform = Transform3D(30.801, 0.00231766, 0.0152008, -0.0023443, 30.8009, 0.0543104, -0.0151967, -0.0543115, 30.8009, 49.6754, 1.89806, -111.198)
+
+[node name="Gate" parent="Platforms/snowfloor2" instance=ExtResource("2_okl2h")]
+transform = Transform3D(0.0324665, -2.47124e-06, -1.60184e-05, 2.44282e-06, 0.0324665, -5.72484e-05, 1.60228e-05, 5.72472e-05, 0.0324665, -1.6141, 0.0936523, 2.64577)
+
+[node name="snowfloor" parent="Platforms" instance=ExtResource("2_ad2i4")]
+transform = Transform3D(7.2699, 0, 0, 0, 7.2699, 0, 0, 0, 7.2699, 0, 2.48553, 0)
+
 [node name="PlatformRed" parent="Platforms" instance=ExtResource("2_4lh3q")]
-transform = Transform3D(3.9312, 0, 0, 0, 0.39312, 0, 0, 0, 3.9312, 0.0200105, 3, 0.00302696)
-
-[node name="PlatformRed2" parent="Platforms" instance=ExtResource("2_4lh3q")]
-transform = Transform3D(3.9312, 0, 0, 0, 0.39312, 0, 0, 0, 3.9312, 9.02, 6, -20.997)
-
-[node name="PlatformRed3" parent="Platforms" instance=ExtResource("2_4lh3q")]
-transform = Transform3D(5.30712, 0, 0, 0, 0.530712, 0, 0, 0, 5.30712, 18.02, 9, 2.00303)
-
-[node name="PlatformBlue" parent="Platforms" instance=ExtResource("3_mj5wy")]
-transform = Transform3D(3.90286, 0, 0, 0, 0.864, 0, 0, 0, 3.90286, 0, 3, -11)
-
-[node name="PlatformBlue2" parent="Platforms" instance=ExtResource("3_mj5wy")]
-transform = Transform3D(3.90286, 0, 0, 0, 0.864, 0, 0, 0, 3.90286, 0, 4.01868, -21.7155)
-
-[node name="PlatformBlue3" parent="Platforms" instance=ExtResource("3_mj5wy")]
-transform = Transform3D(3.90286, 0, 0, 0, 0.864, 0, 0, 0, 3.90286, 18, 7.01868, -20.7155)
-
-[node name="PlatformBlue4" parent="Platforms" instance=ExtResource("3_mj5wy")]
-transform = Transform3D(3.90286, 0, 0, 0, 0.864, 0, 0, 0, 3.90286, 18, 8.01868, -9.71549)
+transform = Transform3D(3.9312, 0, 0, 0, 0.39312, 0, 0, 0, 3.9312, 0.0200105, 4.6116, 0.00302696)
 
 [node name="Environment" type="Node3D" parent="."]
 
@@ -97,22 +87,6 @@ shadow_enabled = true
 [node name="SpawnPosition" type="Marker3D" parent="Extras"]
 unique_name_in_owner = true
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 5, 0)
-
-[node name="Sprite3D" type="Sprite3D" parent="Extras"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 15, -40)
-texture = ExtResource("9_46gx6")
-
-[node name="Features" type="Label3D" parent="Extras"]
-transform = Transform3D(0.387789, 0, 0.921748, 0, 1, 0, -0.921748, 0, 0.387789, -14.0511, 5.78537, -6.67751)
-text = "Features:
-Working Controller
-Double Jump
-Basic Score System
-Animations"
-font = SubResource("SystemFont_om7om")
-font_size = 250
-outline_size = 0
-uppercase = true
 
 [node name="Credits" type="Label3D" parent="Extras"]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -0.0336823, 4.71136, 8.82437)
@@ -159,6 +133,7 @@ anchors_preset = 0
 offset_right = 40.0
 offset_bottom = 40.0
 script = ExtResource("7_x8whp")
+metadata/_edit_use_anchors_ = true
 
 [node name="CoinTexture" type="TextureRect" parent="UserInterface/GameUI"]
 layout_mode = 0
@@ -169,6 +144,7 @@ offset_bottom = 121.0
 texture = ExtResource("7_ow7xm")
 expand_mode = 1
 stretch_mode = 4
+metadata/_edit_use_anchors_ = true
 
 [node name="CoinsLabel" type="Label" parent="UserInterface/GameUI"]
 layout_mode = 0
@@ -183,5 +159,309 @@ theme_override_fonts/font = SubResource("SystemFont_1ixsq")
 theme_override_font_sizes/font_size = 48
 text = "X 3"
 label_settings = SubResource("LabelSettings_igq7x")
+metadata/_edit_use_anchors_ = true
+
+[node name="PlatformRed" parent="." instance=ExtResource("2_4lh3q")]
+transform = Transform3D(3.9312, 0, 0, 0, 0.39312, 0, 0, 0, 3.9312, 0.0200105, 5.16894, -16.3635)
+
+[node name="PlatformRed2" parent="." instance=ExtResource("2_4lh3q")]
+transform = Transform3D(3.9312, 0, 0, 0, 0.39312, 0, 0, 0, 3.9312, 0.0200105, 4.6116, 0.00302696)
+
+[node name="Fence" parent="." instance=ExtResource("11_ad2i4")]
+transform = Transform3D(1.04943, 0, 0, 0, 1.04943, 0, 0, 0, 1.04943, 4.30183, 4.85229, -29.6655)
+
+[node name="Fence" parent="Fence" instance=ExtResource("11_ad2i4")]
+transform = Transform3D(1.04943, 0, 0, 0, 1.04943, 0, 0, 0, 1.04943, 4.586, 0, 0)
+
+[node name="Fence2" parent="Fence" instance=ExtResource("11_ad2i4")]
+transform = Transform3D(1.04943, 0, 0, 0, 1.04943, 0, 0, 0, 1.04943, 9.25378, 0, 0)
+
+[node name="Fence3" parent="Fence" instance=ExtResource("11_ad2i4")]
+transform = Transform3D(1.1013, 0, 0, 0, 1.1013, 0, 0, 0, 1.1013, 14.0663, 0, 0)
+
+[node name="Fence4" parent="Fence" instance=ExtResource("11_ad2i4")]
+transform = Transform3D(1.04943, 0, 0, 0, 1.04943, 0, 0, 0, 1.04943, 18.8617, -0.0317211, 0)
+
+[node name="Fence5" parent="Fence" instance=ExtResource("11_ad2i4")]
+transform = Transform3D(1.1013, 0, 0, 0, 1.1013, 0, 0, 0, 1.1013, 23.6744, -0.0317211, 0)
+
+[node name="Fence6" parent="Fence" instance=ExtResource("11_ad2i4")]
+transform = Transform3D(1.1013, 0, 0, 0, 1.1013, 0, 0, 0, 1.1013, 28.5729, -0.0317211, 0)
+
+[node name="Fence7" parent="Fence" instance=ExtResource("11_ad2i4")]
+transform = Transform3D(1.15574, 0, 0, 0, 1.15574, 0, 0, 0, 1.15574, 33.6233, -0.0317211, 0)
+
+[node name="Fence8" parent="Fence" instance=ExtResource("11_ad2i4")]
+transform = Transform3D(1.04943, 0, 0, 0, 1.04943, 0, 0, 0, 1.04943, 38.581, 0, 0)
+
+[node name="Fence" parent="Fence/Fence8" instance=ExtResource("11_ad2i4")]
+transform = Transform3D(1.04943, 0, 0, 0, 1.04943, 0, 0, 0, 1.04943, 4.586, 0, 0)
+
+[node name="Fence2" parent="Fence/Fence8" instance=ExtResource("11_ad2i4")]
+transform = Transform3D(1.04943, 0, 0, 0, 1.04943, 0, 0, 0, 1.04943, 9.25378, 0, 0)
+
+[node name="Fence3" parent="Fence/Fence8" instance=ExtResource("11_ad2i4")]
+transform = Transform3D(1.1013, 0, 0, 0, 1.1013, 0, 0, 0, 1.1013, 14.0663, 0, 0)
+
+[node name="Fence4" parent="Fence/Fence8" instance=ExtResource("11_ad2i4")]
+transform = Transform3D(1.04943, 0, 0, 0, 1.04943, 0, 0, 0, 1.04943, 18.8617, -0.0317211, 0)
+
+[node name="Fence5" parent="Fence/Fence8" instance=ExtResource("11_ad2i4")]
+transform = Transform3D(1.1013, 0, 0, 0, 1.1013, 0, 0, 0, 1.1013, 23.6744, -0.0317211, 0)
+
+[node name="Fence6" parent="Fence/Fence8" instance=ExtResource("11_ad2i4")]
+transform = Transform3D(1.1013, 0, 0, 0, 1.1013, 0, 0, 0, 1.1013, 28.5729, -0.0317211, 0)
+
+[node name="Fence7" parent="Fence/Fence8" instance=ExtResource("11_ad2i4")]
+transform = Transform3D(1.15574, 0, 0, 0, 1.15574, 0, 0, 0, 1.15574, 33.6233, -0.0317211, 0)
+
+[node name="Fence8" parent="Fence/Fence8" instance=ExtResource("11_ad2i4")]
+transform = Transform3D(1.04943, 0, 0, 0, 1.04943, 0, 0, 0, 1.04943, 38.581, 0, 0)
+
+[node name="Fence" parent="Fence/Fence8/Fence8" instance=ExtResource("11_ad2i4")]
+transform = Transform3D(1.04943, 0, 0, 0, 1.04943, 0, 0, 0, 1.04943, 4.586, 0, 0)
+
+[node name="Fence2" parent="Fence/Fence8/Fence8" instance=ExtResource("11_ad2i4")]
+transform = Transform3D(1.04943, 0, 0, 0, 1.04943, 0, 0, 0, 1.04943, 9.25378, 0, 0)
+
+[node name="Fence3" parent="Fence/Fence8/Fence8" instance=ExtResource("11_ad2i4")]
+transform = Transform3D(1.1013, 0, 0, 0, 1.1013, 0, 0, 0, 1.1013, 14.0663, 0, 0)
+
+[node name="Fence4" parent="Fence/Fence8/Fence8" instance=ExtResource("11_ad2i4")]
+transform = Transform3D(1.04943, 0, 0, 0, 1.04943, 0, 0, 0, 1.04943, 18.8617, -0.0317211, 0)
+
+[node name="Fence5" parent="Fence/Fence8/Fence8" instance=ExtResource("11_ad2i4")]
+transform = Transform3D(1.1013, 0, 0, 0, 1.1013, 0, 0, 0, 1.1013, 23.6744, -0.0317211, 0)
+
+[node name="Fence6" parent="Fence/Fence8/Fence8" instance=ExtResource("11_ad2i4")]
+transform = Transform3D(1.1013, 0, 0, 0, 1.1013, 0, 0, 0, 1.1013, 28.5729, -0.0317211, 0)
+
+[node name="Fence7" parent="Fence/Fence8/Fence8" instance=ExtResource("11_ad2i4")]
+transform = Transform3D(1.15574, 0, 0, 0, 1.15574, 0, 0, 0, 1.15574, 33.6233, -0.0317211, 0)
+
+[node name="Bush_Snow" parent="." instance=ExtResource("11_3tqca")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, -3.05128, 4.85828, -31.8888)
+
+[node name="Bush_Snow" parent="Bush_Snow" instance=ExtResource("11_3tqca")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0709476, -0.235388, 5.33832)
+
+[node name="Bush_Snow5" parent="Bush_Snow/Bush_Snow" instance=ExtResource("11_3tqca")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 22.9254, 0.168173, 124.224)
+
+[node name="Bush_Snow6" parent="Bush_Snow/Bush_Snow" instance=ExtResource("11_3tqca")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 26.6721, 0.168173, 124.224)
+
+[node name="Bush_Snow7" parent="Bush_Snow/Bush_Snow" instance=ExtResource("11_3tqca")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 19.0746, 0.168173, 124.224)
+
+[node name="Bush_Snow8" parent="Bush_Snow/Bush_Snow" instance=ExtResource("11_3tqca")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 15.3279, 0.168173, 124.224)
+
+[node name="Bush_Snow4" parent="Bush_Snow/Bush_Snow" instance=ExtResource("11_3tqca")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 7.52657, 0.168173, 124.224)
+
+[node name="Bush_Snow3" parent="Bush_Snow/Bush_Snow" instance=ExtResource("11_3tqca")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 11.2733, 0.168173, 124.224)
+
+[node name="Bush_Snow2" parent="Bush_Snow/Bush_Snow" instance=ExtResource("11_3tqca")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 3.67579, 0.168173, 124.243)
+
+[node name="Bush_Snow" parent="Bush_Snow/Bush_Snow" instance=ExtResource("11_3tqca")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0709534, 0.168173, 124.224)
+
+[node name="Bush_Snow9" parent="Bush_Snow/Bush_Snow" instance=ExtResource("11_3tqca")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 53.5631, 0.168173, 124.224)
+
+[node name="Bush_Snow10" parent="Bush_Snow/Bush_Snow" instance=ExtResource("11_3tqca")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 57.3098, 0.168173, 124.224)
+
+[node name="Bush_Snow11" parent="Bush_Snow/Bush_Snow" instance=ExtResource("11_3tqca")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 49.7123, 0.168173, 124.224)
+
+[node name="Bush_Snow12" parent="Bush_Snow/Bush_Snow" instance=ExtResource("11_3tqca")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 45.9655, 0.168173, 124.224)
+
+[node name="Bush_Snow13" parent="Bush_Snow/Bush_Snow" instance=ExtResource("11_3tqca")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.1642, 0.168173, 124.224)
+
+[node name="Bush_Snow14" parent="Bush_Snow/Bush_Snow" instance=ExtResource("11_3tqca")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 41.911, 0.168173, 124.224)
+
+[node name="Bush_Snow15" parent="Bush_Snow/Bush_Snow" instance=ExtResource("11_3tqca")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 34.3134, 0.168173, 124.224)
+
+[node name="Bush_Snow16" parent="Bush_Snow/Bush_Snow" instance=ExtResource("11_3tqca")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 30.5667, 0.168173, 124.224)
+
+[node name="Bush_Snow5" parent="Bush_Snow/Bush_Snow/Bush_Snow16" instance=ExtResource("11_3tqca")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -10.2608, 0, -172.084)
+
+[node name="Bush_Snow6" parent="Bush_Snow/Bush_Snow/Bush_Snow16" instance=ExtResource("11_3tqca")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -6.51404, 0, -172.084)
+
+[node name="Bush_Snow7" parent="Bush_Snow/Bush_Snow/Bush_Snow16" instance=ExtResource("11_3tqca")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -14.1116, 0, -172.084)
+
+[node name="Bush_Snow8" parent="Bush_Snow/Bush_Snow/Bush_Snow16" instance=ExtResource("11_3tqca")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -17.8583, 0, -172.084)
+
+[node name="Bush_Snow4" parent="Bush_Snow/Bush_Snow/Bush_Snow16" instance=ExtResource("11_3tqca")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -25.6596, 0, -172.084)
+
+[node name="Bush_Snow3" parent="Bush_Snow/Bush_Snow/Bush_Snow16" instance=ExtResource("11_3tqca")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -21.9129, 0, -172.084)
+
+[node name="Bush_Snow2" parent="Bush_Snow/Bush_Snow/Bush_Snow16" instance=ExtResource("11_3tqca")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -29.5104, 0, -172.084)
+
+[node name="Bush_Snow" parent="Bush_Snow/Bush_Snow/Bush_Snow16" instance=ExtResource("11_3tqca")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -33.2571, 0, -172.084)
+
+[node name="Bush_Snow9" parent="Bush_Snow/Bush_Snow/Bush_Snow16" instance=ExtResource("11_3tqca")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 20.3769, 0, -172.084)
+
+[node name="Bush_Snow10" parent="Bush_Snow/Bush_Snow/Bush_Snow16" instance=ExtResource("11_3tqca")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 24.1236, 0, -172.084)
+
+[node name="Bush_Snow11" parent="Bush_Snow/Bush_Snow/Bush_Snow16" instance=ExtResource("11_3tqca")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 16.5261, 0, -172.084)
+
+[node name="Bush_Snow12" parent="Bush_Snow/Bush_Snow/Bush_Snow16" instance=ExtResource("11_3tqca")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 12.7794, 0, -172.084)
+
+[node name="Bush_Snow13" parent="Bush_Snow/Bush_Snow/Bush_Snow16" instance=ExtResource("11_3tqca")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 4.97802, 0, -172.084)
+
+[node name="Bush_Snow14" parent="Bush_Snow/Bush_Snow/Bush_Snow16" instance=ExtResource("11_3tqca")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 8.72477, 0, -172.084)
+
+[node name="Bush_Snow15" parent="Bush_Snow/Bush_Snow/Bush_Snow16" instance=ExtResource("11_3tqca")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.12726, 0, -172.084)
+
+[node name="Bush_Snow16" parent="Bush_Snow/Bush_Snow/Bush_Snow16" instance=ExtResource("11_3tqca")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.61948, 0, -172.084)
+
+[node name="Bush_Snow17" parent="Bush_Snow/Bush_Snow/Bush_Snow16" instance=ExtResource("11_3tqca")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 51.1322, 0, -172.084)
+
+[node name="Bush_Snow18" parent="Bush_Snow/Bush_Snow/Bush_Snow16" instance=ExtResource("11_3tqca")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 54.879, 0, -172.084)
+
+[node name="Bush_Snow19" parent="Bush_Snow/Bush_Snow/Bush_Snow16" instance=ExtResource("11_3tqca")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 47.2814, 0, -172.084)
+
+[node name="Bush_Snow20" parent="Bush_Snow/Bush_Snow/Bush_Snow16" instance=ExtResource("11_3tqca")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 43.5347, 0, -172.084)
+
+[node name="Bush_Snow21" parent="Bush_Snow/Bush_Snow/Bush_Snow16" instance=ExtResource("11_3tqca")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 35.7334, 0, -172.084)
+
+[node name="Bush_Snow22" parent="Bush_Snow/Bush_Snow/Bush_Snow16" instance=ExtResource("11_3tqca")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 39.4801, 0, -172.084)
+
+[node name="Bush_Snow23" parent="Bush_Snow/Bush_Snow/Bush_Snow16" instance=ExtResource("11_3tqca")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 31.8826, 0, -172.084)
+
+[node name="Bush_Snow24" parent="Bush_Snow/Bush_Snow/Bush_Snow16" instance=ExtResource("11_3tqca")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.1358, 0, -172.084)
+
+[node name="Bush_Snow25" parent="Bush_Snow/Bush_Snow/Bush_Snow16" instance=ExtResource("11_3tqca")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 81.7699, 0, -172.084)
+
+[node name="Bush_Snow26" parent="Bush_Snow/Bush_Snow/Bush_Snow16" instance=ExtResource("11_3tqca")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 85.5166, 0, -172.084)
+
+[node name="Bush_Snow27" parent="Bush_Snow/Bush_Snow/Bush_Snow16" instance=ExtResource("11_3tqca")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 77.9191, 0, -172.084)
+
+[node name="Bush_Snow28" parent="Bush_Snow/Bush_Snow/Bush_Snow16" instance=ExtResource("11_3tqca")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 74.1724, 0, -172.084)
+
+[node name="Bush_Snow29" parent="Bush_Snow/Bush_Snow/Bush_Snow16" instance=ExtResource("11_3tqca")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 66.371, 0, -172.084)
+
+[node name="Bush_Snow30" parent="Bush_Snow/Bush_Snow/Bush_Snow16" instance=ExtResource("11_3tqca")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70.1178, 0, -172.084)
+
+[node name="Bush_Snow31" parent="Bush_Snow/Bush_Snow/Bush_Snow16" instance=ExtResource("11_3tqca")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 62.5202, 0, -172.084)
+
+[node name="Bush_Snow32" parent="Bush_Snow/Bush_Snow/Bush_Snow16" instance=ExtResource("11_3tqca")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 58.7735, 0, -172.084)
+
+[node name="Bush_Snow17" parent="Bush_Snow/Bush_Snow" instance=ExtResource("11_3tqca")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 84.3184, 0.168173, 124.224)
+
+[node name="Bush_Snow18" parent="Bush_Snow/Bush_Snow" instance=ExtResource("11_3tqca")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 88.0651, 0.168173, 124.224)
+
+[node name="Bush_Snow19" parent="Bush_Snow/Bush_Snow" instance=ExtResource("11_3tqca")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 80.4676, 0.168173, 124.224)
+
+[node name="Bush_Snow20" parent="Bush_Snow/Bush_Snow" instance=ExtResource("11_3tqca")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 76.7209, 0.168173, 124.224)
+
+[node name="Bush_Snow21" parent="Bush_Snow/Bush_Snow" instance=ExtResource("11_3tqca")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 68.9196, 0.168173, 124.224)
+
+[node name="Bush_Snow22" parent="Bush_Snow/Bush_Snow" instance=ExtResource("11_3tqca")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 72.6663, 0.168173, 124.224)
+
+[node name="Bush_Snow23" parent="Bush_Snow/Bush_Snow" instance=ExtResource("11_3tqca")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 65.0688, 0.168173, 124.224)
+
+[node name="Bush_Snow24" parent="Bush_Snow/Bush_Snow" instance=ExtResource("11_3tqca")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 61.322, 0.168173, 124.224)
+
+[node name="Bush_Snow25" parent="Bush_Snow/Bush_Snow" instance=ExtResource("11_3tqca")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 114.956, 0.168173, 124.224)
+
+[node name="Bush_Snow26" parent="Bush_Snow/Bush_Snow" instance=ExtResource("11_3tqca")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 118.703, 0.168173, 124.224)
+
+[node name="Bush_Snow27" parent="Bush_Snow/Bush_Snow" instance=ExtResource("11_3tqca")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 111.105, 0.168173, 124.224)
+
+[node name="Bush_Snow28" parent="Bush_Snow/Bush_Snow" instance=ExtResource("11_3tqca")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 107.359, 0.168173, 124.224)
+
+[node name="Bush_Snow29" parent="Bush_Snow/Bush_Snow" instance=ExtResource("11_3tqca")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 99.5572, 0.168173, 124.224)
+
+[node name="Bush_Snow30" parent="Bush_Snow/Bush_Snow" instance=ExtResource("11_3tqca")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 103.304, 0.168173, 124.224)
+
+[node name="Bush_Snow31" parent="Bush_Snow/Bush_Snow" instance=ExtResource("11_3tqca")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 95.7064, 0.168173, 124.224)
+
+[node name="Bush_Snow32" parent="Bush_Snow/Bush_Snow" instance=ExtResource("11_3tqca")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 91.9597, 0.168173, 124.224)
+
+[node name="Fence8" parent="." instance=ExtResource("11_ad2i4")]
+transform = Transform3D(1.04943, 0, 0, 0, 1.04943, 0, 0, 0, 1.04943, -40.1918, 4.302, -29.666)
+
+[node name="Fence" parent="Fence8" instance=ExtResource("11_ad2i4")]
+transform = Transform3D(1.04943, 0, 0, 0, 1.04943, 0, 0, 0, 1.04943, 4.586, 0, 0)
+
+[node name="Fence" parent="Fence8/Fence" instance=ExtResource("11_ad2i4")]
+transform = Transform3D(1.04943, 0, 0, 0, 1.04943, 0, 0, 0, 1.04943, -8.81448, 0, 0)
+
+[node name="Fence2" parent="Fence8" instance=ExtResource("11_ad2i4")]
+transform = Transform3D(1.04943, 0, 0, 0, 1.04943, 0, 0, 0, 1.04943, 9.25378, 0, 0)
+
+[node name="Fence3" parent="Fence8" instance=ExtResource("11_ad2i4")]
+transform = Transform3D(1.1013, 0, 0, 0, 1.1013, 0, 0, 0, 1.1013, 14.0663, 0, 0)
+
+[node name="Fence4" parent="Fence8" instance=ExtResource("11_ad2i4")]
+transform = Transform3D(1.04943, 0, 0, 0, 1.04943, 0, 0, 0, 1.04943, 18.8617, 0, 0)
+
+[node name="Fence5" parent="Fence8" instance=ExtResource("11_ad2i4")]
+transform = Transform3D(1.1013, 0, 0, 0, 1.1013, 0, 0, 0, 1.1013, 23.6744, 0, 0)
+
+[node name="Fence6" parent="Fence8" instance=ExtResource("11_ad2i4")]
+transform = Transform3D(1.1013, 0, 0, 0, 1.1013, 0, 0, 0, 1.1013, 28.5729, -0.0317211, 0)
+
+[node name="Fence7" parent="Fence8" instance=ExtResource("11_ad2i4")]
+transform = Transform3D(1.15574, 0, 0, 0, 1.15574, 0, 0, 0, 1.15574, 33.6233, -0.0317211, 0)
 
 [connection signal="body_entered" from="DeadZone" to="DeadZone" method="_on_body_entered"]

@@ -1,0 +1,14 @@
+[gd_scene load_steps=3 format=3 uid="uid://bb5jia8pmkhwo"]
+
+[ext_resource type="PackedScene" uid="uid://d32ad36jyhx2q" path="res://Map/Floor/snowfloor.glb" id="1_0xcu4"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_0xcu4"]
+size = Vector3(5.63879, 0.0704651, 4.08875)
+
+[node name="snowfloor" instance=ExtResource("1_0xcu4")]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.280701, 0.0558929, 0.763611)
+shape = SubResource("BoxShape3D_0xcu4")
