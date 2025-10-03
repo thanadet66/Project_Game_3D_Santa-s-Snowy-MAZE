@@ -1,0 +1,19 @@
+[gd_scene load_steps=3 format=3 uid="uid://col8rwb7qyyr"]
+
+[ext_resource type="PackedScene" uid="uid://c4r8iyf7ocw0l" path="res://Map/BushSnow/Bush_Snow.glb" id="1_buuts"]
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_kag4t"]
+size = Vector3(2.33802, 2.62114, 0.876205)
+
+[node name="Bush_Snow" instance=ExtResource("1_buuts")]
+transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 0, 0, 0)
+
+[node name="RootNode" parent="." index="0"]
+transform = Transform3D(1, 0, 0, 0, 3, 0, 0, 0, 1, 0, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="." index="1"]
+transform = Transform3D(4.69563, 0, 0, 0, 4.69563, 0, 0, 0, 4.69563, 0, 0, 0)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D" index="0"]
+transform = Transform3D(0.371523, 0, 0, 0, 0.371523, 0, 0, 0, 0.371523, 6.65528e-05, 0.473188, 8.49839e-06)
+shape = SubResource("BoxShape3D_kag4t")
