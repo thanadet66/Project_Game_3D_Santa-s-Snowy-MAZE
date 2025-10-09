@@ -1621,10 +1621,10 @@ label_settings = SubResource("LabelSettings_igq7x")
 metadata/_edit_use_anchors_ = true
 
 [node name="PlatformRed" parent="." instance=ExtResource("2_4lh3q")]
-transform = Transform3D(3.9312, 0, 0, 0, 0.39312, 0, 0, 0, 3.9312, 0.0200105, 5.16894, -16.3635)
+transform = Transform3D(3.9312, 0, 0, 0, 0.39312, 0, 0, 0, 3.9312, 0.0200105, 4.74615, -16.3635)
 
 [node name="PlatformRed2" parent="." instance=ExtResource("2_4lh3q")]
-transform = Transform3D(3.9312, 0, 0, 0, 0.39312, 0, 0, 0, 3.9312, 0.0200105, 4.6116, -9.27862)
+transform = Transform3D(3.9312, 0, 0, 0, 0.39312, 0, 0, 0, 3.9312, 0.0200105, 3.67385, -9.27862)
 
 [node name="Fence" parent="." instance=ExtResource("11_ad2i4")]
 transform = Transform3D(1.04943, 0, 0, 0, 1.04943, 0, 0, 0, 1.04943, 4.30183, 4.85229, -29.6655)
