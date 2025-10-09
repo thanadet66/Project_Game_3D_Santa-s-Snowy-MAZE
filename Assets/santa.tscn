@@ -1,0 +1,15 @@
+[gd_scene load_steps=2 format=3 uid="uid://cx61o02nt35cy"]
+
+[ext_resource type="PackedScene" uid="uid://vsvuat8vpyjd" path="res://Assets/Models/Santa Claus.glb" id="1_os8ho"]
+
+[node name="santa" instance=ExtResource("1_os8ho")]
+
+[node name="Skeleton3D" parent="RootNode/Armature" index="0"]
+bones/1/position = Vector3(-4.86963e-19, -0.00223546, -0.00133674)
+bones/2/rotation = Quaternion(-0.000683716, -0.0879807, -0.00166297, 0.996121)
+bones/3/position = Vector3(-0.0049894, 0.000243914, -0.00125802)
+bones/3/rotation = Quaternion(0.0022673, 0.00757365, 0.988079, 0.153743)
+bones/9/rotation = Quaternion(-0.00328963, -0.00115539, -0.00594795, 0.999976)
+bones/15/position = Vector3(0.0049894, 0.000243914, -0.00294534)
+bones/15/rotation = Quaternion(0.287593, -0.0378454, 0.945302, -0.149204)
+bones/21/rotation = Quaternion(-0.00328963, 0.0011554, 0.00594794, 0.999976)

@@ -16,3 +16,8 @@ func show_mouse_cursor():
 
 func add_score():
 	score += 1
+	
+# เพิ่มฟังก์ชัน reset นี้
+func reset():
+	score = 0
+	print("GameManager reset - score: ", score)  # สำหรับ debug
