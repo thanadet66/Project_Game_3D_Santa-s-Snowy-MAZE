@@ -1,7 +1,7 @@
 [gd_scene load_steps=9 format=3 uid="uid://cf0w0skqs3k64"]
 
 [ext_resource type="Script" uid="uid://wjcoxu6vcuyn" path="res://Scripts/player.gd" id="1_t0xh4"]
-[ext_resource type="PackedScene" path="res://Assets/santa.tscn" id="5_fkybt"]
+[ext_resource type="PackedScene" uid="uid://cx61o02nt35cy" path="res://Assets/santa.tscn" id="5_fkybt"]
 [ext_resource type="Script" uid="uid://guidpmh8qcsc" path="res://Scripts/CameraMovement.gd" id="5_pxu3x"]
 [ext_resource type="ArrayMesh" uid="uid://deu06eho4c74" path="res://Assets/Resources/cloud.res" id="6_nkgvq"]
 [ext_resource type="AudioStream" uid="uid://ncq6fpsrcmjh" path="res://Assets/Audio/SFX/walking.ogg" id="7_asqdb"]
