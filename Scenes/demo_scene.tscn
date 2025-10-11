@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://po63m4srixl4"]
+[gd_scene load_steps=41 format=3 uid="uid://po63m4srixl4"]
 
 [ext_resource type="PackedScene" uid="uid://cf0w0skqs3k64" path="res://Scenes/player.tscn" id="2_21dfl"]
 [ext_resource type="PackedScene" uid="uid://bb5jia8pmkhwo" path="res://Map/Floor/snowfloor.tscn" id="2_ad2i4"]
@@ -35,30 +35,6 @@
 [sub_resource type="Environment" id="Environment_0qdwr"]
 background_mode = 1
 background_color = Color(0.449661, 0.736385, 0.749984, 1)
-
-[sub_resource type="Environment" id="Environment_g4ka7"]
-background_mode = 1
-background_color = Color(0.764706, 0.764706, 0.764706, 1)
-ambient_light_source = 2
-ambient_light_color = Color(0.662745, 0.694118, 0.772549, 1)
-ambient_light_energy = 1.15
-tonemap_mode = 2
-tonemap_exposure = 0.75
-ssr_enabled = true
-ssao_enabled = true
-ssao_radius = 0.45
-ssao_intensity = 1.0
-ssao_power = 15.0
-ssil_enabled = true
-sdfgi_use_occlusion = true
-glow_enabled = true
-glow_intensity = 2.0
-fog_light_color = Color(0.647059, 0.678431, 0.72549, 1)
-volumetric_fog_temporal_reprojection_enabled = false
-adjustment_enabled = true
-adjustment_brightness = 1.06
-adjustment_contrast = 0.95
-adjustment_saturation = 1.09
 
 [sub_resource type="SystemFont" id="SystemFont_ub50t"]
 font_names = PackedStringArray("Star Choco")
@@ -1356,9 +1332,6 @@ transform = Transform3D(-4.37114e-08, 0, 1, 0, 1, 0, -1, 0, -4.37114e-08, 35.639
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 38.0433, 4.71374, -117.237)
 
 [node name="Environment" type="Node3D" parent="."]
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="Environment"]
-environment = SubResource("Environment_g4ka7")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="Environment"]
 transform = Transform3D(-0.898603, 0.438763, 2.98254e-08, 0.146657, 0.300359, 0.942484, 0.413527, 0.846919, -0.334251, 9.04457, 6.63937, -28.4749)
@@ -3208,6 +3181,6 @@ transform = Transform3D(2.59016, 0, 0, 0, 6.84176, 0, 0, 0, 2.36265, 4.38484, 9.
 transform = Transform3D(-1.88895, 0.0246275, -6.70365, 0.00607548, 7.6309, 0.0216537, 3.7608, 4.25081e-05, -3.36712, 7.3981, 2.49177, 45.6511)
 
 [node name="snowflake-b" parent="." instance=ExtResource("32_hgoo1")]
-transform = Transform3D(5.25042, 0, 0, 0, 14.3327, 0, 0, 0, 5.70903, 10.8247, 13.1865, 43.4507)
+transform = Transform3D(5.25042, 0, 0, 0, 14.3327, 0, 0, 0, 5.70903, 12.8317, 7.41917, 43.4507)
 
 [connection signal="body_entered" from="DeadZone" to="DeadZone" method="_on_body_entered"]

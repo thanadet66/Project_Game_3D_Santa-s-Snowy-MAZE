@@ -1,7 +1,7 @@
-[gd_scene load_steps=8 format=4 uid="uid://c3pdk85tgl04u"]
+[gd_scene load_steps=8 format=4 uid="uid://5hatggj11cdi"]
 
-[ext_resource type="PackedScene" uid="uid://biyd6x403gvny" path="res://models/platform-falling.glb" id="1_yreqj"]
-[ext_resource type="Script" uid="uid://c1yo3ijh0gjjt" path="res://objects/platform_falling1.gd" id="2_4oa53"]
+[ext_resource type="PackedScene" uid="uid://pp2hwm0q73ai" path="res://models/platform-falling.glb" id="1_yreqj"]
+[ext_resource type="Script" uid="uid://c1yo3ijh0gjjt" path="res://objects/platform_falling2.gd" id="2_4oa53"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_t551e"]
 size = Vector3(2, 0.1, 2)
@@ -60,9 +60,6 @@ shape = SubResource("BoxShape3D_t551e")
 
 [node name="platform-falling2_StaticBody3D#CollisionShape3D" type="CollisionShape3D" parent="platform-falling2#StaticBody3D" index="0"]
 shape = SubResource("ConcavePolygonShape3D_4mmvt")
-
-[node name="platform-falling2" parent="." index="2"]
-visible = false
 
 [node name="StonePlatform_Cylinder" type="MeshInstance3D" parent="." index="3"]
 transform = Transform3D(2.03959, 0, 0, 0, 4.16774, 0, 0, 0, 2.11457, 0, 0.41183, 0)
