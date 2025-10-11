@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://dccejl100uvda"
-path="res://.godot/imported/tree-snow-c.fbx-38f66af36e6e32e520dff66532595a68.scn"
+uid="uid://bvegkm13fsthy"
+path="res://.godot/imported/snowflake-c.fbx-a7e66dfa398398de99780df9e332cdc1.scn"
 
 [deps]
 
-source_file="res://FBX format/tree-snow-c.fbx"
-dest_files=["res://.godot/imported/tree-snow-c.fbx-38f66af36e6e32e520dff66532595a68.scn"]
+source_file="res://FBX format/snowflake-c.fbx"
+dest_files=["res://.godot/imported/snowflake-c.fbx-a7e66dfa398398de99780df9e332cdc1.scn"]
 
 [params]
 
