@@ -13,7 +13,7 @@ config_version=5
 config/name="Project Game 3d Santa-s-snowy-maze-main"
 config/description="A Starter 3D Plaformer Kit For Godot 4."
 config/tags=PackedStringArray("starterkit")
-run/main_scene="uid://bke2p3fmhmhb7"
+run/main_scene="uid://po63m4srixl4"
 config/features=PackedStringArray("4.4", "Forward Plus")
 boot_splash/bg_color=Color(0.0941176, 0.101961, 0.109804, 1)
 

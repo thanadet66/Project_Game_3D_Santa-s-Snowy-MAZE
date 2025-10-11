@@ -1,6 +1,6 @@
 [gd_scene load_steps=7 format=4 uid="uid://d0uh33x6toyaw"]
 
-[ext_resource type="Script" uid="uid://c1yo3ijh0gjjt" path="res://objects/platform_falling.gd" id="1_o3ab8"]
+[ext_resource type="Script" uid="uid://c1yo3ijh0gjjt" path="res://objects/platform_falling1.gd" id="1_o3ab8"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_uh44g"]
 resource_name = "Material.001"

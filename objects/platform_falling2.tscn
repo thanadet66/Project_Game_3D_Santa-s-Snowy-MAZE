@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=4 uid="uid://c3pdk85tgl04u"]
 
-[ext_resource type="PackedScene" path="res://models/platform-falling.glb" id="1_yreqj"]
-[ext_resource type="Script" uid="uid://c1yo3ijh0gjjt" path="res://objects/platform_falling.gd" id="2_4oa53"]
+[ext_resource type="PackedScene" uid="uid://biyd6x403gvny" path="res://models/platform-falling.glb" id="1_yreqj"]
+[ext_resource type="Script" uid="uid://c1yo3ijh0gjjt" path="res://objects/platform_falling1.gd" id="2_4oa53"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_t551e"]
 size = Vector3(2, 0.1, 2)
@@ -69,4 +69,8 @@ transform = Transform3D(2.03959, 0, 0, 0, 4.16774, 0, 0, 0, 2.11457, 0, 0.41183,
 mesh = SubResource("ArrayMesh_rient")
 skeleton = NodePath("")
 
+[node name="Timer" type="Timer" parent="." index="4"]
+wait_time = 3.0
+
 [connection signal="body_entered" from="Area3D" to="." method="_on_body_entered"]
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
