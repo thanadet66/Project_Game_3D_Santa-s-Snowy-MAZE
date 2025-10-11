@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bpthy32psdes0"
-path="res://.godot/imported/brick.glb-e638d8c24b1ef123aeb8188535621295.scn"
+uid="uid://bdkhqivmyrwgo"
+path="res://.godot/imported/snowman.fbx-c38e9efa2140c255eb1584ff909e402d.scn"
 
 [deps]
 
-source_file="res://models/brick.glb"
-dest_files=["res://.godot/imported/brick.glb-e638d8c24b1ef123aeb8188535621295.scn"]
+source_file="res://FBX format/snowman.fbx"
+dest_files=["res://.godot/imported/snowman.fbx-c38e9efa2140c255eb1584ff909e402d.scn"]
 
 [params]
 
@@ -28,10 +28,11 @@ meshes/force_disable_compression=false
 skins/use_named_skins=true
 animation/import=true
 animation/fps=30
-animation/trimming=false
+animation/trimming=true
 animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
 _subresources={}
-gltf/naming_version=1
-gltf/embedded_image_handling=1
+fbx/importer=0
+fbx/allow_geometry_helper_nodes=false
+fbx/embedded_image_handling=1

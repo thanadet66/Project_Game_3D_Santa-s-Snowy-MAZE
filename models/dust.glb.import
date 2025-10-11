@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bpthy32psdes0"
-path="res://.godot/imported/brick.glb-e638d8c24b1ef123aeb8188535621295.scn"
+uid="uid://v0p5v1012cqu"
+path="res://.godot/imported/dust.glb-1353ca834ae15b165f2b80c04f99a5a8.scn"
 
 [deps]
 
-source_file="res://models/brick.glb"
-dest_files=["res://.godot/imported/brick.glb-e638d8c24b1ef123aeb8188535621295.scn"]
+source_file="res://models/dust.glb"
+dest_files=["res://.godot/imported/dust.glb-1353ca834ae15b165f2b80c04f99a5a8.scn"]
 
 [params]
 

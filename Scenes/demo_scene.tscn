@@ -27,7 +27,7 @@
 [ext_resource type="PackedScene" uid="uid://5hatggj11cdi" path="res://objects/platform_falling2.tscn" id="27_4x6jk"]
 [ext_resource type="PackedScene" path="res://objects/Medium Island.tscn" id="28_buyx7"]
 [ext_resource type="PackedScene" uid="uid://cd45t4cqywqk5" path="res://FBX format/tree-snow-a.fbx" id="29_0qdwr"]
-[ext_resource type="PackedScene" path="res://objects/cloud.tscn" id="29_ub3fe"]
+[ext_resource type="PackedScene" uid="uid://7jtdx2dxd0sq" path="res://objects/cloud.tscn" id="29_ub3fe"]
 [ext_resource type="PackedScene" uid="uid://bvegkm13fsthy" path="res://FBX format/snowflake-c.fbx" id="30_qhsmg"]
 [ext_resource type="PackedScene" uid="uid://bjvpiusghs6lp" path="res://FBX format/snowman-hat.fbx" id="31_h6ttm"]
 [ext_resource type="PackedScene" uid="uid://dex42jhpyg4xt" path="res://FBX format/snowflake-b.fbx" id="32_hgoo1"]

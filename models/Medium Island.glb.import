@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bpthy32psdes0"
-path="res://.godot/imported/brick.glb-e638d8c24b1ef123aeb8188535621295.scn"
+uid="uid://lhheeqr450mc"
+path="res://.godot/imported/Medium Island.glb-9e4414b37ef5e6c0bee904f20b7554b5.scn"
 
 [deps]
 
-source_file="res://models/brick.glb"
-dest_files=["res://.godot/imported/brick.glb-e638d8c24b1ef123aeb8188535621295.scn"]
+source_file="res://models/Medium Island.glb"
+dest_files=["res://.godot/imported/Medium Island.glb-9e4414b37ef5e6c0bee904f20b7554b5.scn"]
 
 [params]
 

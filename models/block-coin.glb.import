@@ -3,7 +3,7 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bda8mco5tke2b"
+uid="uid://cydee5pvlvs7l"
 path="res://.godot/imported/block-coin.glb-26799c6efd41074eeb3f7c8566032c8e.scn"
 
 [deps]
@@ -33,5 +33,5 @@ animation/remove_immutable_tracks=true
 animation/import_rest_as_RESET=false
 import_script/path=""
 _subresources={}
-gltf/naming_version=2
+gltf/naming_version=1
 gltf/embedded_image_handling=1

@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bpthy32psdes0"
-path="res://.godot/imported/brick.glb-e638d8c24b1ef123aeb8188535621295.scn"
+uid="uid://3moildiueg1d"
+path="res://.godot/imported/platform-grass-large-round.glb-1baa8c47f88d676b171370cee4874a31.scn"
 
 [deps]
 
-source_file="res://models/brick.glb"
-dest_files=["res://.godot/imported/brick.glb-e638d8c24b1ef123aeb8188535621295.scn"]
+source_file="res://models/platform-grass-large-round.glb"
+dest_files=["res://.godot/imported/platform-grass-large-round.glb-1baa8c47f88d676b171370cee4874a31.scn"]
 
 [params]
 

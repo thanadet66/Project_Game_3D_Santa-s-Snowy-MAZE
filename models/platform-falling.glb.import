@@ -3,13 +3,13 @@
 importer="scene"
 importer_version=1
 type="PackedScene"
-uid="uid://bpthy32psdes0"
-path="res://.godot/imported/brick.glb-e638d8c24b1ef123aeb8188535621295.scn"
+uid="uid://pp2hwm0q73ai"
+path="res://.godot/imported/platform-falling.glb-a1321a8710589d27b2a6e247cfe23359.scn"
 
 [deps]
 
-source_file="res://models/brick.glb"
-dest_files=["res://.godot/imported/brick.glb-e638d8c24b1ef123aeb8188535621295.scn"]
+source_file="res://models/platform-falling.glb"
+dest_files=["res://.godot/imported/platform-falling.glb-a1321a8710589d27b2a6e247cfe23359.scn"]
 
 [params]
 
